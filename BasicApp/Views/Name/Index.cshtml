@@ -1,0 +1,66 @@
+﻿@model BasicApp.Models.RegisterViewModel
+
+@{
+    ViewBag.Title = "Name";
+}
+
+<main aria-labelledby="title">
+    @using (Html.BeginForm())
+    {
+        <p>
+            <table>
+                <tr>
+                    <td class="field-name">Name:</td>
+                    <td>@Html.TextBoxFor(model => model.LastName)</td>
+                    <td>@Html.TextBoxFor(model => model.FirstName)</td>
+                    <td>@Html.TextBoxFor(model => model.MiddleName)</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="field-name">Last</td>
+                    <td class="field-name">First</td>
+                    <td class="field-name">Middle</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(model => model.AddressLine1) </td>
+                    <td>@Html.TextBoxFor(model => model.AddressLine1)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.AddressLine2)</td>
+                    <td>@Html.TextBoxFor(model => model.AddressLine2)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.AddressCity)</td>
+                    <td>@Html.TextBoxFor(model => model.AddressCity)</td>
+                </tr>
+                <tr id="USOnly1">
+                    <td>@Html.LabelFor(model => model.AddressState)</td>
+                    <td>@Html.DropDownListFor(model => model.AddressState, BasicApp.Models.RegisterViewModel.States)</td>
+                </tr>
+                <tr id="USOnly3">
+                    <td>@Html.LabelFor(model => model.AddressZipCode)</td>
+                    <td>@Html.TextBoxFor(model => model.AddressZipCode)</td>
+                </tr>
+                <tr id="USOnly4">
+                    <td>@Html.LabelFor(model => model.AddressCounty)</td>
+                    <td>@Html.TextBoxFor(model => model.AddressCounty)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.AddressCountry)</td>
+                    <td>
+                        @Html.DropDownListFor(model => model.AddressCountry, BasicApp.Models.RegisterViewModel.Countries)
+                    </td>
+                </tr>
+            </table>
+        </p>
+        <div>
+            <input type="submit" value="Back" name="action:LoadPrevious" />
+            <input type="submit" value="Next" name="action:LoadNext" />
+        </div>
+    }
+</main>
+

@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@model BasicApp.Models.RegisterViewModel
+<main>
+    <p>
+        This is an application to demonstrate the functionality of an existing application without distributing that app's entire source code.
+    </p>
+
+    @using (Html.BeginForm())
+    {
+        <input type="submit" value="Next" name="action:LoadNext" />
+    }
+
+</main>

@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Final";
+}
+@model BasicApp.Models.RegisterViewModel
+<main>
+    <p>
+        Welcome to the final page of the app.
+    </p>
+
+    @using (Html.BeginForm())
+    {
+        <input type="submit" value="Back" name="action:LoadPrevious" />
+    }
+
+</main>
+
